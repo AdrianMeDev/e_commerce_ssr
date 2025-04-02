@@ -1,9 +1,30 @@
-@use 'variables';
+@use 'variables' as vars;
+
+@mixin light-theme {
+  --bg-color: #{vars.$light-bg-color};
+  --text-color: #{vars.$light-text-color};
+  --accent-color: #{vars.$light-accent-color};
+  --border-color: #{vars.$light-border-color};
+}
+
+@mixin dark-theme {
+  --bg-color: #{vars.$dark-bg-color};
+  --text-color: #{vars.$dark-text-color};
+  --accent-color: #{vars.$dark-accent-color};
+  --border-color: #{vars.$dark-border-color};
+}
+.light-theme {
+  @include light-theme;
+}
+
+.dark-theme {
+  @include dark-theme;
+}
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
-    font-size: variables.$font-size-root;
+    font-size: vars.$font-size-root;
   }
   
   *,
@@ -14,14 +35,16 @@ html {
   }
   
   body {
-    font-size: variables.$font-size-base;
-    font-family: variables.$font-family-sans-serif;
-    line-height: variables.$line-height-base;
+    font-size: vars.$font-size-base;
+    font-family: vars.$font-family-sans-serif;
+    line-height: vars.$line-height-base;
   }
   
   body,
   html {
     height: 100%;
+    background: var(--bg-color);
+    color: var(--text-color);
   }
   
   blockquote,

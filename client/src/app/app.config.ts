@@ -7,16 +7,5 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideKeycloak({
-      config: {
-        url: 'https://keycloak.adrianme.dev',
-        realm: 'test-realm',
-        clientId: 'angular-test-app',
-      },
-      initOptions: {
-        onLoad: 'login-required',
-        checkLoginIframe: false,
-      },
-    }),
   ],
 };

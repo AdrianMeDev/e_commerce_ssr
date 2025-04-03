@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor() {}
+
+
+  login(email: string, password: string) {}
+
+  register() {}
+
+  forgotPassword() {}
 }
